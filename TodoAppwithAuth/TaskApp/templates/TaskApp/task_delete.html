@@ -1,0 +1,6 @@
+<h1><a>Go Back</a></h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Are you sure you wanna delete this {{task}}</p>
+    <input type="submit" value="submit">
+</form>

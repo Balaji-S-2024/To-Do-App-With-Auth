@@ -1,0 +1,28 @@
+{% if request.user.is_authenticated %}
+    {{request.user}}
+    <a href='{% url 'LogoutView' %}'>Log out</a>
+{% else %}
+    <a href='{% url 'TaskLoginView' %}'>Log In</a>
+{% endif %}
+
+<hr>
+
+<h1>Class Based View Working!!!</h1>
+<h1><a href="{% url 'TaskCreate' %}">TaskCreate</a></h1>
+<table>
+    <tr>
+        <th>Tasks</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td><a href="{% url 'TaskDetail' task.pk %}">View</a><td>
+            <td><a href="{% url 'TaskUpdate' task.pk %}">Edit</a><td>
+            <td><a href="{% url 'TaskDelete' task.pk %}">Delete</a><td>
+        </tr>
+        {%empty%}
+        <h1>No Tasks</h1>
+    {% endfor %}
+</table>
