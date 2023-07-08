@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import TaskView, TaskDetail, TaskCreate, TaskUpdate, TaskDelete, TaskLoginView
+from .views import TaskView, TaskDetail, TaskCreate, TaskUpdate, TaskDelete, TaskLoginView, RegisterView 
 
 from django.contrib.auth.views import LogoutView
 
@@ -7,6 +7,7 @@ urlpatterns = [
     #when we use this url routing ({% url 'name=' modelname.pk %}) this name= in path funtions helps us 
     path('TaskLoginView', TaskLoginView.as_view(), name='TaskLoginView'),
     path('LogoutView', LogoutView.as_view(next_page = 'TaskLoginView'), name='LogoutView'),
+    path('RegisterView', RegisterView.as_view(), name='RegisterView'),
 
     path('', TaskView.as_view(), name='TaskView'),
     path('task/<int:pk>/', TaskDetail.as_view(), name='TaskDetail'),

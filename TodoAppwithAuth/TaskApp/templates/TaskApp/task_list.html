@@ -9,6 +9,13 @@
 
 <h1>Class Based View Working!!!</h1>
 <h1><a href="{% url 'TaskCreate' %}">TaskCreate</a></h1>
+
+<form action="" method="get">
+<input type="text" name="search-area" value="{{search_input}}" id="">
+<input type="submit" value="Search">
+
+</form>
+
 <table>
     <tr>
         <th>Tasks</th>
@@ -17,8 +24,7 @@
     </tr>
     {% for task in tasks %}
         <tr>
-            <td>{{ task.title }}</td>
-            <td><a href="{% url 'TaskDetail' task.pk %}">View</a><td>
+            <td>{{ task.title }}</td>       
             <td><a href="{% url 'TaskUpdate' task.pk %}">Edit</a><td>
             <td><a href="{% url 'TaskDelete' task.pk %}">Delete</a><td>
         </tr>
