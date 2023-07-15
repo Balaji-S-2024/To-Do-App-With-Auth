@@ -1,8 +1,18 @@
-<h1>Log In</h1>
-<form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Log In">
-</form>
+{% extends 'TaskApp/base.html' %}
 
-<p>Don't have an account? <a href=" {% url 'RegisterView' %} ">Register</a></p>
+{% block content %}
+
+<div class="header-bar">
+    <h1>Log In</h1>
+</div>
+<div class="card-body">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Log In">
+    </form>
+    <p>Don't have an account? <a href=" {% url 'RegisterView' %} ">Register</a></p>
+</div>
+
+
+{% endblock content %}
