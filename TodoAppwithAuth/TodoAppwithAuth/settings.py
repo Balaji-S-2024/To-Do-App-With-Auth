@@ -76,10 +76,37 @@ WSGI_APPLICATION = 'TodoAppwithAuth.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'todoapp',  # Replace with your MySQL database name
+        'USER': 'root',       # Replace with your MySQL username
+        'PASSWORD': 'Balaji@1000$',   # Replace with your MySQL password
+        'HOST': 'localhost',           # Replace with your MySQL host (usually 'localhost')
+        'PORT': '3306',                # Replace with your MySQL port
+    }
+}
+
+
+
+'''
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+'''
+
+'''
+'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_database_name',
+        'USER': 'root',
+        'PASSWORD': 'Balaji@1000$',
+        'HOST': 'localhost',  # You can change this to the MySQL server address if it's remote.
+        'PORT': '3306',  # The default MySQL port is 3306.
+    }
+
+'''
 
 
 # Password validation
